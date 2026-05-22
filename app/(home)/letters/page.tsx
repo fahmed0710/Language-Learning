@@ -1,12 +1,7 @@
 import { promises as fs } from 'fs';
+import { Conjunct } from '@/app/types';
 
 export default async function LettersPage() {
-  interface Conjunct {
-    part1: string;
-    part2: string;
-    conjunct: string;
-  }
-
   const file = await fs.readFile(process.cwd() + '/app/conjuncts.json', 'utf8');
   const conjuncts = JSON.parse(file);
 
