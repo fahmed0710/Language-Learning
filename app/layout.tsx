@@ -27,7 +27,30 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="flex flex-col min-h-screen overflow-hidden">
+        <nav className="flex items-center justify-between p-4">
+          <div className="text-lg font-semibold"> Logo </div>
+          <ul className="flex space-x-6">
+            <li>
+              <a href="#">Home</a>
+            </li>
+            <li>
+              <a href="#">Letters</a>
+            </li>
+            <li>
+              <a href="#">Changelog</a>
+            </li>
+          </ul>
+        </nav>
+
+        <main>{children}</main>
+
+        <div className="flex justify-center">
+          <footer className="absolute bottom-0 p-4 text-center">
+            © 2026 BengaLing
+          </footer>
+        </div>
+      </body>
     </html>
   );
 }
